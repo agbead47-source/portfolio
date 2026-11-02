@@ -1,0 +1,376 @@
+:root {
+  --bg: #fafcf8;
+  --sidebar: #eff5eb;
+  --text: #232b25;
+  --muted: #5c6a60;
+  --line: #dfe8da;
+  --soft: #e9f1e4;
+  --accent: #2f6f52;
+  --accent-dark: #235640;
+  --accent-soft: #d9ebdd;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Pretendard, "Malgun Gothic", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+a { color: inherit; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* 메뉴 */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 56px 24px;
+  border-right: 1px solid var(--line);
+  background: var(--sidebar);
+}
+
+.name {
+  display: block;
+  margin-bottom: 24px;
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav a {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 16px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav a:hover { background: var(--accent-soft); }
+
+.nav a.active {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* 내용 */
+main { padding: 56px 48px 96px; }
+
+section {
+  padding-bottom: 56px;
+  scroll-margin-top: 32px;
+}
+
+section + section {
+  padding-top: 56px;
+  border-top: 1px solid var(--line);
+}
+
+section:last-child { padding-bottom: 0; }
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+h2 {
+  margin: 0 0 24px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+section > h2::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 3px;
+  background: var(--accent);
+  vertical-align: -3px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+p { margin: 0; }
+
+.muted {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.group { margin-top: 40px; }
+
+.group-title {
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+/* 내정보 */
+.profile {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.photo {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 14px;
+  object-fit: cover;
+}
+
+.headline {
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 8px;
+}
+
+.contact a { color: var(--accent); }
+
+/* 경력 */
+.career { display: grid; gap: 24px; }
+
+.career-item {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 16px;
+}
+
+/* 자격증/어학 */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* 내가 만든 사이트 */
+.sites {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.site {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  text-decoration: none;
+  transition: border-color .15s;
+}
+
+a.site:hover { border-color: var(--accent); }
+
+.site-text { margin-top: 8px; }
+
+.site:focus-visible,
+.nav a:focus-visible,
+.back:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.thumb {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 14px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.site-body { padding: 14px 16px 16px; }
+
+/* 사이트 상세 페이지 */
+.back {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: var(--muted);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.back:hover { color: var(--accent); }
+
+.detail-summary { margin-bottom: 20px; }
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover { background: var(--accent-dark); }
+
+.detail-image {
+  margin: 32px 0 40px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.detail-info {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 8px 16px;
+  margin: 0 0 40px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.detail-info dt {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.detail-info dd { margin: 0; }
+
+.detail-text { display: grid; gap: 32px; }
+
+.detail-text h2 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+/* 폰 화면: 메뉴가 위쪽 가로 탭으로 바뀝니다 */
+@media (max-width: 760px) {
+  .layout { display: block; }
+
+  .sidebar {
+    z-index: 10;
+    height: auto;
+    padding: 12px 16px 8px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .name {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+
+  .nav {
+    flex-direction: row;
+    margin: 0 -16px;
+    padding: 0 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar { display: none; }
+
+  .nav a {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+
+  main { padding: 32px 16px 64px; }
+
+  section {
+    padding-bottom: 40px;
+    scroll-margin-top: 112px;
+  }
+
+  section + section { padding-top: 40px; }
+
+  h1 { font-size: 25px; }
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  h3 { font-size: 17px; }
+
+  .group-title { font-size: 20px; }
+
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact { justify-content: center; }
+
+  .career-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+
+  .back { margin-bottom: 16px; }
+
+  .button {
+    display: block;
+    text-align: center;
+  }
+
+  .detail-image { margin: 24px 0 32px; }
+
+  .detail-info { grid-template-columns: 72px minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
