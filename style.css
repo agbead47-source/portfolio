@@ -12,8 +12,6 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
-
 body {
   margin: 0;
   background: var(--bg);
@@ -217,6 +215,13 @@ a.site:hover { border-color: var(--accent); }
 
 .site-text { margin-top: 8px; }
 
+.site-more {
+  margin-top: 10px;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .site:focus-visible,
 .nav a:focus-visible,
 .back:focus-visible,
@@ -265,6 +270,8 @@ a.site:hover { border-color: var(--accent); }
 
 .button:hover { background: var(--accent-dark); }
 
+.detail-note { margin-top: 8px; }
+
 .detail-image {
   margin: 32px 0 40px;
   border: 1px solid var(--line);
@@ -292,7 +299,12 @@ a.site:hover { border-color: var(--accent); }
 
 .detail-text h2 {
   margin-bottom: 8px;
-  font-size: 18px;
+  font-size: 21px;
+}
+
+.detail-text ul {
+  margin: 0;
+  padding-left: 20px;
 }
 
 /* 폰 화면: 메뉴가 위쪽 가로 탭으로 바뀝니다 */
@@ -369,8 +381,4 @@ a.site:hover { border-color: var(--accent); }
   .detail-image { margin: 24px 0 32px; }
 
   .detail-info { grid-template-columns: 72px minmax(0, 1fr); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
 }

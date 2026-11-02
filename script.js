@@ -29,3 +29,12 @@ if (sections.every(Boolean)) {
   window.addEventListener('resize', updateActive);
   updateActive();
 }
+
+// 상세 페이지에서 돌아올 때는 바로 이동하고, 페이지 안에서 메뉴를 누를 때만 부드럽게 스크롤합니다
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }, 0);
+  });
+}
