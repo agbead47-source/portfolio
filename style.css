@@ -362,46 +362,98 @@ a.site:hover { border-color: var(--accent); }
   list-style: none;
 }
 
-.flow li {
+.flow li { display: flex; }
+
+.flow-button {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: #fff;
+  color: var(--text);
+  font: inherit;
   font-size: 15px;
   line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color .15s;
 }
 
-.flow h3 {
-  margin: 2px 0 4px;
+.flow-button:hover { border-color: var(--accent); }
+
+.flow-button:focus-visible,
+.image-popup-close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.flow-title {
   font-size: 16px;
+  font-weight: 700;
 }
 
-.flow .flow-mine {
+.flow-more {
+  margin-top: auto;
+  padding-top: 4px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.flow-button.flow-mine {
   border-color: var(--accent);
   background: var(--accent-soft);
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 16px;
+.flow-mine .flow-more { color: var(--accent-dark); }
+
+.image-popup {
+  width: min(860px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
 }
 
-.gallery figure { margin: 0; }
+.image-popup::backdrop { background: rgba(20, 30, 24, .7); }
 
-.gallery img {
+.image-popup-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.image-popup-caption {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.image-popup-close {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--soft);
+  color: var(--text);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-popup-close:hover { background: var(--accent-soft); }
+
+.image-popup-image {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid var(--line);
   border-radius: 8px;
-}
-
-.gallery figcaption {
-  margin-top: 4px;
-  color: var(--muted);
-  font-size: 15px;
 }
 
 .columns {
@@ -499,8 +551,6 @@ a.site:hover { border-color: var(--accent); }
 
   .flow,
   .columns { grid-template-columns: minmax(0, 1fr); }
-
-  .gallery { gap: 8px; }
 
   .detail-table { font-size: 15px; }
 

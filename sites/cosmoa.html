@@ -71,20 +71,14 @@
 
         <div>
           <h2>서비스 구성 (팀 전체)</h2>
-          <p>담당자의 하루 업무 순서대로 화면을 배치했습니다.</p>
+          <p>담당자의 하루 업무 순서대로 화면을 배치했습니다. 카드를 누르면 실제 화면을 볼 수 있습니다.</p>
           <ol class="flow">
-            <li class="flow-mine"><span class="muted">출근 직후</span><h3>홈 화면</h3><p>환율, 뉴스, 규제를 한 화면에서 확인 (직접 개발)</p></li>
-            <li><span class="muted">요청서 접수</span><h3>개발요청서</h3><p>바이어 요청서를 연구소 양식으로 정리</p></li>
-            <li><span class="muted">연구소 전달 전</span><h3>인허가 규제</h3><p>성분표로 시장별 규제를 사전 검토</p></li>
-            <li><span class="muted">샘플 제작 전</span><h3>AI 제형 모델링</h3><p>점도로 용기 적합성을 예측</p></li>
-            <li><span class="muted">견적·협상</span><h3>원가·마진 시뮬레이션</h3><p>단가 계산과 역제안 수용 여부 판단</p></li>
+            <li><button class="flow-button flow-mine" type="button" data-image="../images/sites/cosmoa.jpg" data-caption="홈 화면"><span class="muted">출근 직후</span><span class="flow-title">홈 화면</span><span>환율, 뉴스, 규제를 한 화면에서 확인 (직접 개발)</span><span class="flow-more">화면 보기</span></button></li>
+            <li><button class="flow-button" type="button" data-image="../images/sites/cosmoa-request.jpg" data-caption="개발요청서"><span class="muted">요청서 접수</span><span class="flow-title">개발요청서</span><span>바이어 요청서를 연구소 양식으로 정리</span><span class="flow-more">화면 보기</span></button></li>
+            <li><button class="flow-button" type="button" data-image="../images/sites/cosmoa-regulation.jpg" data-caption="국가별 인허가 규제"><span class="muted">연구소 전달 전</span><span class="flow-title">인허가 규제</span><span>성분표로 시장별 규제를 사전 검토</span><span class="flow-more">화면 보기</span></button></li>
+            <li><button class="flow-button" type="button" data-image="../images/sites/cosmoa-formula.jpg" data-caption="AI 제형 모델링"><span class="muted">샘플 제작 전</span><span class="flow-title">AI 제형 모델링</span><span>점도로 용기 적합성을 예측</span><span class="flow-more">화면 보기</span></button></li>
+            <li><button class="flow-button" type="button" data-image="../images/sites/cosmoa-margin.jpg" data-caption="원가·마진 시뮬레이션"><span class="muted">견적·협상</span><span class="flow-title">원가·마진 시뮬레이션</span><span>단가 계산과 역제안 수용 여부 판단</span><span class="flow-more">화면 보기</span></button></li>
           </ol>
-          <div class="gallery">
-            <figure><img src="../images/sites/cosmoa-request.jpg" alt="개발요청서 분석 화면" loading="lazy"><figcaption>개발요청서</figcaption></figure>
-            <figure><img src="../images/sites/cosmoa-regulation.jpg" alt="국가별 인허가 규제 화면" loading="lazy"><figcaption>국가별 인허가 규제</figcaption></figure>
-            <figure><img src="../images/sites/cosmoa-formula.jpg" alt="AI 제형 모델링 화면" loading="lazy"><figcaption>AI 제형 모델링</figcaption></figure>
-            <figure><img src="../images/sites/cosmoa-margin.jpg" alt="원가·마진 시뮬레이션 화면" loading="lazy"><figcaption>원가·마진 시뮬레이션</figcaption></figure>
-          </div>
         </div>
 
         <div>
@@ -209,6 +203,14 @@
       </div>
     </main>
   </div>
+
+  <dialog class="image-popup" aria-label="화면 크게 보기">
+    <div class="image-popup-head">
+      <p class="image-popup-caption"></p>
+      <button class="image-popup-close" type="button" aria-label="닫기">×</button>
+    </div>
+    <img class="image-popup-image" src="" alt="">
+  </dialog>
 
   <script src="../script.js"></script>
 </body>
