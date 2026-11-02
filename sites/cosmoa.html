@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>COSMOA | 홍은주 포트폴리오</title>
-  <meta name="description" content="화장품 ODM 해외영업 업무 대시보드 COSMOA 프로젝트 소개입니다.">
+  <meta name="description" content="화장품 ODM 해외영업 담당자를 위한 통합 업무 대시보드 COSMOA 프로젝트 소개입니다.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -24,38 +24,187 @@
       <a class="back" href="../index.html#sites">← 사이트 목록으로</a>
 
       <h1>COSMOA (코스모아)</h1>
-      <p class="muted detail-summary">화장품 ODM 해외영업 업무 대시보드</p>
+      <p class="muted detail-summary">화장품 ODM 해외영업 담당자를 위한 통합 업무 대시보드</p>
       <a class="button" href="https://cosmoa-dashboard.onrender.com" target="_blank" rel="noopener">사이트 열기</a>
       <p class="muted detail-note">로그인이 필요한 사이트입니다. 처음 열 때 1분 정도 걸릴 수 있습니다.</p>
 
-      <img class="thumb detail-image" src="../images/sites/cosmoa.jpg" alt="COSMOA 로그인 화면">
+      <img class="thumb detail-image" src="../images/sites/cosmoa.jpg" alt="환율, 바이어 현지 시각, 화장품 수출입, 뉴스, 규제 소식이 한 화면에 모인 COSMOA 홈 화면">
 
       <dl class="detail-info">
         <dt>프로젝트</dt>
-        <dd>한국무역아카데미 AX마스터 과정 1차 팀 프로젝트</dd>
+        <dd>한국무역협회 무역아카데미 무역 AX마스터 과정 1차 팀 프로젝트</dd>
+        <dt>기간</dt>
+        <dd>2026.09.17 ~ 09.28 (12일), 09.29 최종 발표</dd>
+        <dt>팀 구성</dt>
+        <dd>5명</dd>
         <dt>맡은 역할</dt>
         <dd>홈 화면, 로그인, AI 챗봇 단독 개발, 발표 자료와 시연 영상 제작</dd>
-        <dt>성과</dt>
-        <dd>6개 팀 중 1위, 기업으로부터 기술 이전 제안</dd>
+        <dt>사용 기술</dt>
+        <dd>Python(Flask), SQLite, 공공데이터 API, OpenAI API, Render 배포</dd>
+        <dt>결과</dt>
+        <dd>6개 팀 중 1위, 화장품 기업 1곳에서 실무 활용 긍정 검토</dd>
       </dl>
 
       <div class="detail-text">
         <div>
-          <h2>만든 이유</h2>
-          <p>화장품 해외영업팀의 업무 흐름을 효율화하기 위해 만들었습니다.</p>
+          <h2>문제 정의</h2>
+          <p>ODM 기업의 해외영업 담당자는 바이어, 연구소, 공장 사이를 조율하지만, 업무에 필요한 정보는 여러 사이트와 엑셀 파일에 나뉘어 있었습니다. 기능을 추측으로 정하지 않기 위해 화장품 업계에서 15년 이상 OEM·ODM 해외영업을 담당해 온 현직자와 커피챗을 진행해 하루 업무와 불편 사항을 직접 파악했습니다.</p>
+          <blockquote class="quote">
+            <p>“중동 이슈로 플라스틱 원료가 귀해지면서 용기값이 크게 올랐어요. 몇 달 전에 확정한 단가로 생산하려니 마진이 거의 남지 않았죠. 그래서 견적을 낼 때 환율도 지금보다 낮춰 잡아요.”</p>
+            <cite>커피챗에서 가장 인상 깊었던 이야기</cite>
+          </blockquote>
+          <div class="table-wrap">
+            <table class="detail-table">
+              <thead>
+                <tr><th scope="col">현장의 불편</th><th scope="col">해결 기능</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>국가별 성분 규제가 다르고, 특히 미국과 중국은 기준이 까다롭고 자주 바뀝니다</td><td>국가별 인허가 규제</td></tr>
+                <tr><td>영문 바이어 요청서를 연구소용 한글 양식으로 매번 다시 정리합니다</td><td>개발요청서 자동 정리</td></tr>
+                <tr><td>내용물과 용기가 맞지 않으면 누액이 생겨 용기를 다시 개발해야 합니다</td><td>AI 제형 모델링</td></tr>
+                <tr><td>환율과 원가 변동으로 마진이 흔들리고, 가격 역제안마다 결재를 기다립니다</td><td>원가·마진 시뮬레이션</td></tr>
+                <tr><td>환율, 수출 실적, 뉴스, 규제 공지를 아침마다 여러 사이트에서 따로 확인합니다</td><td>홈 화면·로그인 (직접 개발)</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+
         <div>
-          <h2>주요 기능</h2>
-          <ul>
-            <li>국가별 인허가 규제 정보</li>
-            <li>원가·마진 시뮬레이션</li>
-            <li>환율, 수출입, 업계 정보를 자동으로 수집해 한 화면에 정리</li>
-            <li>AI 챗봇</li>
-          </ul>
+          <h2>서비스 구성 (팀 전체)</h2>
+          <p>담당자의 하루 업무 순서대로 화면을 배치했습니다.</p>
+          <ol class="flow">
+            <li class="flow-mine"><span class="muted">출근 직후</span><h3>홈 화면</h3><p>환율, 뉴스, 규제를 한 화면에서 확인 (직접 개발)</p></li>
+            <li><span class="muted">요청서 접수</span><h3>개발요청서</h3><p>바이어 요청서를 연구소 양식으로 정리</p></li>
+            <li><span class="muted">연구소 전달 전</span><h3>인허가 규제</h3><p>성분표로 시장별 규제를 사전 검토</p></li>
+            <li><span class="muted">샘플 제작 전</span><h3>AI 제형 모델링</h3><p>점도로 용기 적합성을 예측</p></li>
+            <li><span class="muted">견적·협상</span><h3>원가·마진 시뮬레이션</h3><p>단가 계산과 역제안 수용 여부 판단</p></li>
+          </ol>
+          <div class="gallery">
+            <figure><img src="../images/sites/cosmoa-request.jpg" alt="개발요청서 분석 화면" loading="lazy"><figcaption>개발요청서</figcaption></figure>
+            <figure><img src="../images/sites/cosmoa-regulation.jpg" alt="국가별 인허가 규제 화면" loading="lazy"><figcaption>국가별 인허가 규제</figcaption></figure>
+            <figure><img src="../images/sites/cosmoa-formula.jpg" alt="AI 제형 모델링 화면" loading="lazy"><figcaption>AI 제형 모델링</figcaption></figure>
+            <figure><img src="../images/sites/cosmoa-margin.jpg" alt="원가·마진 시뮬레이션 화면" loading="lazy"><figcaption>원가·마진 시뮬레이션</figcaption></figure>
+          </div>
         </div>
+
+        <div>
+          <h2>프로토타입 검증</h2>
+          <p>커피챗 이후 같은 현직자에게 전화로 화면을 하나씩 설명하고 의견을 들었습니다. 구현하고 싶었던 기능보다 실무에 꼭 필요한 기능을 남기는 기준이 되었습니다.</p>
+          <div class="columns">
+            <div>
+              <h3>추가</h3>
+              <ul>
+                <li>기준 환율 직접 입력: 견적 환율은 영업 담당자의 판단으로 정하기 때문</li>
+                <li>수량별 단가표: 5천 개와 10만 개의 단가가 달라 영업이 바로 알아야 하기 때문</li>
+              </ul>
+            </div>
+            <div>
+              <h3>수정</h3>
+              <ul>
+                <li>시험·인증 비용: 개당 단가에 포함하지 않고 별도 청구로 분리</li>
+                <li>요청서의 목표 가격: 연구소에는 고가·중가·저가 구간만 전달</li>
+                <li>규제 검색: 간단히 확인한 뒤 공식 사이트로 연결</li>
+              </ul>
+            </div>
+            <div>
+              <h3>제외</h3>
+              <ul>
+                <li>도착지 기준 단가 계산: FOB 조건 견적에서는 운임과 관세를 바이어가 계산하기 때문</li>
+                <li>요청서의 거래 조건: 연구소에 공유할 필요가 없기 때문</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>담당 업무: 홈 화면</h2>
+          <p>담당자의 아침은 환율, 수출 실적, 업계 뉴스, 규제 공지를 각각 다른 사이트에서 찾아보는 것으로 시작합니다. 로그인하면 스크롤 없이 첫 화면에서 다섯 가지 정보를 모두 확인할 수 있도록 구성했고, 카드 배치는 담당자가 아침에 확인하는 순서를 기준으로 정했습니다.</p>
+          <div class="table-wrap">
+            <table class="detail-table">
+              <thead>
+                <tr><th scope="col">영역</th><th scope="col">내용</th><th scope="col">데이터 출처</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>환율</td><td>주요 통화 기준환율과 전일 대비 등락</td><td>한국수출입은행 API</td></tr>
+                <tr><td>바이어 현지 시각</td><td>주요 수출국 도시의 현지 시각과 근무 시간 여부</td><td>관세청 수출 순위, 시차 계산</td></tr>
+                <tr><td>화장품 수출입</td><td>월별 수출 요약, 상위 수출국, 품목별 수출</td><td>관세청 API</td></tr>
+                <tr><td>업계 뉴스</td><td>화장품 전문지와 식약처 소식</td><td>RSS, 크롤링</td></tr>
+                <tr><td>규제 소식</td><td>화장품 규제 소식을 국가별로 분류해 표시</td><td>KOTRA API, 구글 뉴스</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h2>담당 업무: 세부 기능과 발표</h2>
+          <div class="stack">
+            <div>
+              <h3>바이어 현지 시각</h3>
+              <p>수출 상위국 도시의 현지 시각을 자동으로 보여 주고, 근무 시간이면 초록색으로 표시합니다. 담당 바이어가 있는 도시를 직접 선택할 수 있으며 서머타임도 반영됩니다.</p>
+            </div>
+            <div>
+              <h3>로그인</h3>
+              <p>담당자마다 자신에게 필요한 화면을 갖도록 계정 기능을 구현했습니다. 현직자가 가장 중요하다고 강조한 업무 이력 관리를 담당자 단위로 쌓을 수 있는 기반이기도 합니다.</p>
+            </div>
+            <div>
+              <h3>AI 챗봇</h3>
+              <p>OpenAI API를 연동하되, 질문을 받으면 실제 환율·수출입·규제 데이터를 먼저 조회한 뒤 답하도록 설계해 근거 없는 답변을 줄였습니다.</p>
+            </div>
+            <div>
+              <h3>발표 자료·시연 영상</h3>
+              <p>5명이 각자 만든 기능을 담당자의 하루를 따라가는 흐름으로 엮어, 처음 보는 사람도 각 기능이 필요한 이유를 이해할 수 있도록 했습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>기술적 문제 해결</h2>
+          <div class="stack">
+            <div>
+              <h3>공식 출처만 사용</h3>
+              <p>환율은 한국수출입은행, 수출입 실적은 관세청 데이터만 사용하고, 수출입 수치는 무역협회 K-stat과 하나씩 대조해 검증했습니다.</p>
+            </div>
+            <div>
+              <h3>속도와 안정성 개선</h3>
+              <p>화면을 열 때마다 외부 데이터를 불러와 느리고 오류가 잦았습니다. 수집한 데이터에서 화장품 품목만 걸러 SQLite에 저장하도록 바꿔 로딩을 앞당기고 오류를 줄였으며, 환율 API가 멈추면 예비 API로 자동 전환되게 했습니다.</p>
+            </div>
+            <div>
+              <h3>수집 정책 준수</h3>
+              <p>크롤링을 허용하지 않는 뉴스 사이트는 본문을 가져오지 않고 제목과 링크만 표시했습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>결과</h2>
+          <p>6개 팀 중 1위를 차지했습니다. 프로젝트 이후 화장품 기업 1곳에서 자사 업무에 COSMOA를 활용하는 방안을 긍정적으로 검토했으며, 현재 팀원들과 실무 적용을 목표로 기능을 보완하고 있습니다.</p>
+          <blockquote class="quote">
+            <p>“ERP에서는 견적을 유연하게 조정해 보기 어려운데, 영업 담당자가 직접 마진을 바꿔 가며 검토할 수 있어 실무에 도움이 되겠다.”</p>
+            <cite>발표 후 현직자 피드백</cite>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“고민한 흔적이 많다. 완성되면 나도 써 볼 수 있게 해 달라.”</p>
+            <cite>프로토타입 검토 후 현직자 피드백</cite>
+          </blockquote>
+        </div>
+
         <div>
           <h2>배운 점</h2>
-          <p>외부 데이터를 연동하고 수출입 수치를 무역협회 K-stat과 대조해 검증하면서, 흩어진 정보를 비교할 수 있는 형태로 만드는 방법을 익혔습니다.</p>
+          <div class="stack">
+            <div>
+              <h3>사용자의 하루에서 출발하기</h3>
+              <p>사용자의 실제 업무 흐름을 이해해야 실효성 있는 서비스를 만들 수 있다는 것을 배웠습니다. 현직자와의 커피챗과 전화 피드백이 기능 방향을 정하는 핵심 근거가 되었습니다.</p>
+            </div>
+            <div>
+              <h3>데이터의 출처가 신뢰를 만든다</h3>
+              <p>흩어진 데이터를 모으고 공식 출처와 대조하는 일은 시간이 많이 들지만, 그만큼 결과물의 신뢰도를 좌우한다는 것을 경험했습니다.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>향후 과제: 업무 이력 관리</h2>
+          <p>현직자가 가장 중요하다고 강조한 것은 언제, 어느 고객사에 무엇을 의뢰했고 어떤 피드백을 받았는지 남기는 업무 이력이었습니다. 이번에는 축적된 업무 데이터가 없어 구현하지 못했으며, 기능을 보완하며 우선 해결할 과제로 정했습니다.</p>
         </div>
       </div>
     </main>
