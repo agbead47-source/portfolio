@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FIONEX | 홍은주 포트폴리오</title>
-  <meta name="description" content="브라질 시장을 대상으로 한 해외영업 업무 사이트 FIONEX 프로젝트 소개입니다.">
+  <meta name="description" content="효성티앤씨 regen T2T 원사를 브라질에 알리는 가상 시나리오로 만든 마케팅 대시보드 FIONEX 프로젝트 소개입니다.">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -24,7 +24,7 @@
       <a class="back" href="../index.html#sites">← 사이트 목록으로</a>
 
       <h1>FIONEX</h1>
-      <p class="muted detail-summary">브라질 시장을 대상으로 한 해외영업 업무 사이트</p>
+      <p class="muted detail-summary">차세대 원사와 시장을 연결하는 플랫폼. 효성티앤씨 regen T2T 원사의 브라질 마케팅 대시보드</p>
       <a class="button" href="https://fionex.onrender.com/" target="_blank" rel="noopener">사이트 열기</a>
       <p class="muted detail-note">처음 열 때 시간이 조금 걸릴 수 있습니다.</p>
 
@@ -33,18 +33,94 @@
       <dl class="detail-info">
         <dt>프로젝트</dt>
         <dd>한국무역협회 무역아카데미 무역 AX마스터 과정 2차 프로젝트</dd>
+        <dt>팀</dt>
+        <dd>5명 (TEAM HMHGMG)</dd>
+        <dt>담당</dt>
+        <dd>초기 기획안 작성, 홈 탭, 발표</dd>
+        <dt>설정</dt>
+        <dd>공개 자료로 구성한 가상 시나리오이며, 효성티앤씨 내부 자료는 쓰지 않았습니다.</dd>
+        <dt>기술</dt>
+        <dd>Python, Flask, OpenAI API, ComexStat·KOTRA·섬유 뉴스 데이터</dd>
       </dl>
 
-      <!-- 맡은 역할과 성과가 정해지면 위 목록에 dt, dd를 추가하세요 -->
       <div class="detail-text">
         <div>
-          <h2>주요 기능</h2>
+          <h2>왜 브라질인가</h2>
+          <p>효성티앤씨는 2030년까지 지속가능 제품의 매출 비중을 16%로 늘리는 목표를 세웠고, 헌 옷으로 만든 원사 regen T2T를 2025년 4분기부터 생산합니다. 이 원사를 알릴 첫 시장으로 브라질을 골랐습니다.</p>
           <ul>
-            <li><strong>홈:</strong> 브라질 현지 시각과 연락 가능 시간, 환율, 업계 소식, 일일 브리핑 PDF</li>
-            <li><strong>시장/바이어 분석:</strong> 브라질 수입 통계 조회, 공급국 비교, 잠재 바이어 목록</li>
-            <li><strong>제품소개서:</strong> 한국어 제품 자료로 포르투갈어 소개서 PDF 생성</li>
-            <li><strong>그린 클레임 체크:</strong> 친환경 홍보 문구의 표현 위험 검토</li>
-            <li><strong>홍보 스튜디오:</strong> 포르투갈어 홍보 영상 콘티 생성과 PDF 저장</li>
+            <li><strong>큰 생산 시장:</strong> 2024년 의류 약 84억 벌을 생산했습니다.</li>
+            <li><strong>꾸준한 수입 수요:</strong> 2025년 섬유 수입액이 68억 달러입니다.</li>
+            <li><strong>이미 있는 거점:</strong> 효성은 2011년부터 산타카타리나에서 스판덱스 공장을 운영하고 있습니다.</li>
+            <li><strong>넘어야 할 벽:</strong> 폴리에스터 원사 관세가 18%여서, 가격 대신 친환경 가치로 파트너 브랜드를 공략하는 전략을 세웠습니다.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>문제와 서비스 구성</h2>
+          <p>남미 프로젝트팀의 마케팅·영업 담당자가 겪는 문제 4가지를 정의하고, 판단부터 확산까지의 업무 순서대로 5개 탭을 구성했습니다.</p>
+          <div class="table-wrap">
+            <table class="detail-table">
+              <thead>
+                <tr>
+                  <th scope="col">탭</th>
+                  <th scope="col">해결할 문제</th>
+                  <th scope="col">주요 기능</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>홈 (판단)</td>
+                  <td>흩어진 시장 정보</td>
+                  <td>바이어 현지 시각과 연락 가능 여부, 환율, 업계 소식 AI 요약, 전시회 일정, 일일 브리핑 PDF</td>
+                </tr>
+                <tr>
+                  <td>시장/바이어 분석 (근거 확보)</td>
+                  <td>흩어진 시장 정보</td>
+                  <td>브라질 수입 추이·단가, 공급국 비교, 잠재 바이어 839곳 목록과 AI 브리핑</td>
+                </tr>
+                <tr>
+                  <td>제품소개서 (제작)</td>
+                  <td>근거 없는 현지어 소개서</td>
+                  <td>한국어 제품 자료로 포르투갈어 소개서 PDF 생성</td>
+                </tr>
+                <tr>
+                  <td>그린 클레임 체크 (검수)</td>
+                  <td>그린워싱 위험</td>
+                  <td>친환경 문구별 위험 판단과 수정안 제시</td>
+                </tr>
+                <tr>
+                  <td>홍보 스튜디오 (확산)</td>
+                  <td>보이지 않는 소재</td>
+                  <td>바이어용·소비자용 포르투갈어 홍보 스토리보드와 PDF 저장</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h2>AI 결과를 믿을 수 있게 한 방법</h2>
+          <ul>
+            <li>수치 계산은 코드로 처리하고, AI는 해석과 문서 생성에만 씁니다.</li>
+            <li>출처 없는 수치·인증·공급 조건은 AI로 채우지 않고 '미확인'으로 표시합니다.</li>
+            <li>평균 단가를 견적으로, 일반 원사 수요를 T2T 수요로 단정하지 않습니다.</li>
+            <li>밖으로 나가는 소개서와 홍보물은 그린 클레임 검수를 거치도록 업무 흐름을 설계했습니다.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>기획에서 구현까지</h2>
+          <p>처음에는 남미 5개국을 고를 수 있는 'regen LATAM 에이전트'로 기획했습니다. 이후 브라질에 집중해 5개 탭을 구현하고, 서비스 이름을 FIONEX(포르투갈어 Fio '실' + Next)로 정했습니다.</p>
+        </div>
+
+        <div>
+          <h2>향후 개발 계획</h2>
+          <ul>
+            <li><strong>로그인:</strong> 계정·권한 관리와 작업 이력 저장</li>
+            <li><strong>다국가 확장:</strong> 콜롬비아, 칠레, 아르헨티나 등 국가 선택</li>
+            <li><strong>탭 연동:</strong> 분석 결과를 소개서와 검수로 자동 연결</li>
+            <li><strong>규제 자동 갱신:</strong> 그린 클레임 기준 자료를 매월 업데이트</li>
+            <li><strong>사내 시스템 연동:</strong> ERP와 그룹웨어 연결</li>
           </ul>
         </div>
       </div>
