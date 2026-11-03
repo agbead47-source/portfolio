@@ -180,6 +180,24 @@ p { margin: 0; }
   gap: 16px;
 }
 
+.career-points {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}
+
+.career-points li + li { margin-top: 4px; }
+
+.more-career { margin-top: 20px; }
+
+.more-career summary {
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.more-career .career { margin-top: 16px; }
+
 /* 자격증/어학 */
 .cards {
   display: grid;
