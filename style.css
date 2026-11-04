@@ -150,6 +150,8 @@ p { margin: 0; }
 
 .group { margin-top: 40px; }
 
+h2 + .group { margin-top: 0; }
+
 .group-title {
   margin-bottom: 16px;
   padding-bottom: 8px;
