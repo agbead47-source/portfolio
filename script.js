@@ -54,6 +54,43 @@ if (popup) {
   });
 }
 
+// 메일 앱이 열리지 않는 사람도 주소를 가져갈 수 있게 복사 버튼을 둡니다
+const copyEmail = document.querySelector('.copy-email');
+
+if (copyEmail) {
+  const label = copyEmail.textContent;
+  let timer;
+
+  function copyWithSelection(text) {
+    const area = document.createElement('textarea');
+    area.value = text;
+    area.style.position = 'fixed';
+    area.style.opacity = '0';
+    document.body.append(area);
+    area.select();
+    const copied = document.execCommand('copy');
+    area.remove();
+    return copied;
+  }
+
+  copyEmail.addEventListener('click', async () => {
+    const email = copyEmail.dataset.email;
+    let copied = false;
+    try {
+      await navigator.clipboard.writeText(email);
+      copied = true;
+    } catch {
+      copied = copyWithSelection(email);
+    }
+
+    copyEmail.textContent = copied ? '복사했어요' : '복사 실패';
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      copyEmail.textContent = label;
+    }, 2000);
+  });
+}
+
 // 상세 페이지에서 돌아올 때는 바로 이동하고, 페이지 안에서 메뉴를 누를 때만 부드럽게 스크롤합니다
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.addEventListener('load', () => {
